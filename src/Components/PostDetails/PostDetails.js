@@ -62,7 +62,15 @@ const PostDetails = () => {
     return (
         <div>
             <Container maxWidth="sm">
-                <h2>{post.title} </h2>
+                <div className={classes.root}>
+                    <Avatar
+                        alt="avatar name"
+                        src={avatar1}
+                        className={classes.large}
+                    />
+                    <h2>{post.title} </h2>
+                </div>
+
                 <p>{post.body} </p>
                 <img
                     style={{ width: "100%" }}

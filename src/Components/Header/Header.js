@@ -11,6 +11,7 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormGroup from "@material-ui/core/FormGroup";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
+import { Link } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
@@ -53,7 +54,23 @@ const Header = () => {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" className={classes.title}>
-                        Photos
+                        <Link
+                            style={{
+                                color: "white",
+                                textDecorationStyle: "none",
+                            }}
+                            to="/"
+                        >
+                            <span
+                                style={{
+                                    color: "white",
+                                    textDecorationStyle: "none",
+                                }}
+                            >
+                                {" "}
+                                Home
+                            </span>
+                        </Link>
                     </Typography>
                     {auth && (
                         <div>
