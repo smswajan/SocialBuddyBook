@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Container } from "@material-ui/core";
-import PostCard from "./PostCard";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
+import PostCard from "../PostCard/PostCard";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -29,7 +29,7 @@ const AllPosts = () => {
             <div className={classes.root}>
                 <Grid container spacing={4}>
                     {posts.map((item) => (
-                        <Grid item xs={12} sm={4}>
+                        <Grid item xs={12} sm={6}>
                             <PostCard postDetails={item} />
                         </Grid>
                     ))}
