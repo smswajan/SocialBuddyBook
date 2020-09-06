@@ -9,6 +9,7 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { Box } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import "./PostCard.css";
 const useStyles = makeStyles({
     root: {
         maxWidth: "100%",
@@ -20,42 +21,44 @@ const PostCard = (props) => {
     const post = props.postDetails;
     const { userId } = post;
     return (
-        <Card className={classes.root}>
-            <CardActionArea>
-                <CardMedia
-                    component="img"
-                    alt="Contemplative Reptile"
-                    height="140"
-                    image="https://source.unsplash.com/random/800x600"
-                    title="Contemplative Reptile"
-                />
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
-                        {post.title}
-                    </Typography>
-                    <Typography
-                        variant="body2"
-                        color="textSecondary"
-                        component="p"
-                    >
-                        {post.body}
-                    </Typography>
-                </CardContent>
-            </CardActionArea>
-            <Box pb={3}>
-                <CardActions>
-                    <Link to={"/posts/" + userId}>
-                        <Button
-                            variant="contained"
-                            size="small"
-                            color="primary"
+        <Link className="link" to={"/posts/" + userId}>
+            <Card className={classes.root}>
+                <CardActionArea>
+                    <CardMedia
+                        component="img"
+                        alt="Contemplative Reptile"
+                        height="140"
+                        image="https://source.unsplash.com/random/800x600"
+                        title="Contemplative Reptile"
+                    />
+                    <CardContent>
+                        <Typography gutterBottom variant="h5" component="h2">
+                            {post.title}
+                        </Typography>
+                        <Typography
+                            variant="body2"
+                            color="textSecondary"
+                            component="p"
                         >
-                            Show more
-                        </Button>
-                    </Link>
-                </CardActions>
-            </Box>
-        </Card>
+                            {post.body}
+                        </Typography>
+                    </CardContent>
+                </CardActionArea>
+                <Box pb={3}>
+                    <CardActions>
+                        <Link className="link" to={"/posts/" + userId}>
+                            <Button
+                                variant="contained"
+                                size="small"
+                                color="primary"
+                            >
+                                Show more
+                            </Button>
+                        </Link>
+                    </CardActions>
+                </Box>
+            </Card>
+        </Link>
     );
 };
 

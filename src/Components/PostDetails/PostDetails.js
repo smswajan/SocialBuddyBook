@@ -49,6 +49,7 @@ const PostDetails = () => {
             .then((res) => res.json())
             .then((data) => setAvatar2(data.results[0].picture.large));
     }, []);
+
     const [comments, setComments] = useState([]);
     useEffect(() => {
         const commentsUrl =
@@ -68,8 +69,14 @@ const PostDetails = () => {
                         src={avatar1}
                         className={classes.large}
                     />
-                    <h2>{post.title} </h2>
+                    <div>
+                        <p>
+                            <small>Written by: </small>
+                            <strong>Intelligent Writer</strong>
+                        </p>
+                    </div>
                 </div>
+                <h2>{post.title} </h2>
 
                 <p>{post.body} </p>
                 <img
